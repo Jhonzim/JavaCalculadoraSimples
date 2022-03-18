@@ -30,9 +30,7 @@ public class jFrameCalculadora extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         operator1 = new javax.swing.JLabel();
-        operator2 = new javax.swing.JLabel();
         valor1 = new javax.swing.JTextField();
-        valor2 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         result = new javax.swing.JLabel();
         clearOperators = new javax.swing.JButton();
@@ -62,8 +60,6 @@ public class jFrameCalculadora extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         operator1.setText("Operador 1 :");
-
-        operator2.setText("Operador 2 :");
 
         jLabel2.setText("Resultado");
 
@@ -218,13 +214,9 @@ public class jFrameCalculadora extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(operator2)
-                            .addComponent(operator1))
+                        .addComponent(operator1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(valor1)
-                            .addComponent(valor2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(valor1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,11 +271,7 @@ public class jFrameCalculadora extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(operator1)
                     .addComponent(valor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(operator2)
-                    .addComponent(valor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(result))
@@ -315,7 +303,7 @@ public class jFrameCalculadora extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(num0, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
@@ -326,7 +314,9 @@ public class jFrameCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_num6ActionPerformed
 
     private void clearOperatorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearOperatorsActionPerformed
-    valor1.setText(null);        // TODO add your handling code here:
+    result.setText(null);
+    numero1 = 0;
+    numero2 = 0;    
     }//GEN-LAST:event_clearOperatorsActionPerformed
 
     private void num5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num5ActionPerformed
@@ -399,16 +389,20 @@ public class jFrameCalculadora extends javax.swing.JFrame {
         valor1.setText("");
         double resultado;
         if(sinal == "soma"){
-           valor1.setText(String.valueOf(resultado = (numero1 + numero2)));
+           result.setText(String.valueOf(resultado = (numero1 + numero2)));
+           numero1 = Double.parseDouble(result.getText());
         }
         if(sinal == "subtracao"){
-           valor1.setText(String.valueOf(resultado = (numero1 - numero2)));
+           result.setText(String.valueOf(resultado = (numero1 - numero2)));
+           numero1 = Double.parseDouble(result.getText());
         }
         if(sinal == "multiplicacao"){
-           valor1.setText(String.valueOf(resultado = (numero1 * numero2)));
+           result.setText(String.valueOf(resultado = (numero1 * numero2)));
+           numero1 = Double.parseDouble(result.getText());
         }
         if(sinal == "divisao"){
-           valor1.setText(String.valueOf(resultado = (numero1 / numero2)));
+           result.setText(String.valueOf(resultado = (numero1 / numero2)));
+           numero1 = Double.parseDouble(result.getText());
         }
     }//GEN-LAST:event_jButton16ActionPerformed
 
@@ -469,13 +463,11 @@ public class jFrameCalculadora extends javax.swing.JFrame {
     private javax.swing.JButton num8;
     private javax.swing.JButton num9;
     private javax.swing.JLabel operator1;
-    private javax.swing.JLabel operator2;
     private javax.swing.JButton ponto;
     private javax.swing.JLabel result;
     private javax.swing.JButton soma;
     private javax.swing.JButton subtracao;
     private javax.swing.JLabel txtTitulo;
     private javax.swing.JTextField valor1;
-    private javax.swing.JTextField valor2;
     // End of variables declaration//GEN-END:variables
 }
