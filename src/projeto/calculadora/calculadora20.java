@@ -5,6 +5,8 @@
  */
 package projeto.calculadora;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author USUARIO
@@ -43,20 +45,38 @@ public class calculadora20 extends javax.swing.JFrame {
         jButton16 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         txtTitulo = new javax.swing.JLabel();
+        ButtonCE = new javax.swing.JButton();
 
         jLabel4.setText("jLabel4");
 
         jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(102, 102, 102));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         operator1.setText("Operador 1 :");
+        getContentPane().add(operator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 78, -1, -1));
 
         operator2.setText("Operador 2 :");
+        getContentPane().add(operator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 105, -1, -1));
+
+        valor1.setBackground(new java.awt.Color(0, 153, 204));
+        valor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valor1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(valor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 75, 148, -1));
+
+        valor2.setBackground(new java.awt.Color(0, 153, 204));
+        getContentPane().add(valor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 102, 148, -1));
 
         jLabel2.setText("Resultado");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 135, -1, -1));
 
         result.setText("0");
+        getContentPane().add(result, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 135, 52, -1));
 
         clearOperators.setText("AC");
         clearOperators.addActionListener(new java.awt.event.ActionListener() {
@@ -64,6 +84,7 @@ public class calculadora20 extends javax.swing.JFrame {
                 clearOperatorsActionPerformed(evt);
             }
         });
+        getContentPane().add(clearOperators, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 52, 36));
 
         divisor.setText("/");
         divisor.addActionListener(new java.awt.event.ActionListener() {
@@ -71,6 +92,7 @@ public class calculadora20 extends javax.swing.JFrame {
                 divisorActionPerformed(evt);
             }
         });
+        getContentPane().add(divisor, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 52, 36));
 
         multiplicacao.setText("*");
         multiplicacao.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +100,7 @@ public class calculadora20 extends javax.swing.JFrame {
                 multiplicacaoActionPerformed(evt);
             }
         });
+        getContentPane().add(multiplicacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 52, 36));
 
         subtracao.setText("-");
         subtracao.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +108,7 @@ public class calculadora20 extends javax.swing.JFrame {
                 subtracaoActionPerformed(evt);
             }
         });
+        getContentPane().add(subtracao, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 52, 36));
 
         soma.setText("+");
         soma.addActionListener(new java.awt.event.ActionListener() {
@@ -92,15 +116,18 @@ public class calculadora20 extends javax.swing.JFrame {
                 somaActionPerformed(evt);
             }
         });
+        getContentPane().add(soma, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 52, 36));
 
         jButton16.setText("=");
+        jButton16.setBorder(null);
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton16ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 111, 38));
 
-        jPanel1.setBackground(new java.awt.Color(255, 102, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 255));
 
         txtTitulo.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         txtTitulo.setText("Calculadora");
@@ -122,79 +149,23 @@ public class calculadora20 extends javax.swing.JFrame {
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(operator2)
-                            .addComponent(operator1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(valor1)
-                            .addComponent(valor2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(clearOperators, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(soma, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(divisor, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(multiplicacao, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(subtracao, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(operator1)
-                    .addComponent(valor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(operator2)
-                    .addComponent(valor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(result))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(clearOperators, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(soma, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(divisor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(multiplicacao, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(subtracao, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 274, -1));
+
+        ButtonCE.setText("CE");
+        ButtonCE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCEActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ButtonCE, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 52, 38));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void somaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_somaActionPerformed
-        numero1 = Double.parseDouble(valor1.getText());
-        numero2 = Double.parseDouble(valor2.getText());
+    try{numero1 = Double.parseDouble(valor1.getText());
+        numero2 = Double.parseDouble(valor2.getText());}
+    catch(NumberFormatException ex){JOptionPane.showMessageDialog(null, "Só podem apenas números");}
         
         sinal = "soma";
         //valor1.setText("");
@@ -206,41 +177,53 @@ public class calculadora20 extends javax.swing.JFrame {
         double resultado;
         if(sinal == "soma"){
             result.setText(String.valueOf(numero1 + numero2));
+            try{numero1 = Double.parseDouble(result.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null,"Apenas numeros");}
         }
         if(sinal == "subtracao"){
             result.setText(String.valueOf(numero1 - numero2));
+            try{numero1 = Double.parseDouble(result.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null,"Apenas numeros");}
         }
         if(sinal == "multiplicacao"){
             result.setText(String.valueOf(numero1 * numero2));
+            try{numero1 = Double.parseDouble(result.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null,"Apenas numeros");}
         }
         if(sinal == "divisao"){
             result.setText(String.valueOf(numero1 / numero2));
+            try{numero1 = Double.parseDouble(result.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null,"Apenas numeros");}
         }
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void subtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtracaoActionPerformed
-        numero1 = Double.parseDouble(valor1.getText());
-        numero2 = Double.parseDouble(valor2.getText());
+        try{numero1 = Double.parseDouble(valor1.getText());
+        numero2 = Double.parseDouble(valor2.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null, "Só podem apenas números");}
         sinal = "subtracao";
     }//GEN-LAST:event_subtracaoActionPerformed
 
     private void multiplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplicacaoActionPerformed
-        numero1 = Double.parseDouble(valor1.getText());
-        numero2 = Double.parseDouble(valor2.getText());
+        try{numero1 = Double.parseDouble(valor1.getText());
+        numero2 = Double.parseDouble(valor2.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null, "Só podem apenas números");}
         sinal = "multiplicacao";
     }//GEN-LAST:event_multiplicacaoActionPerformed
 
     private void divisorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisorActionPerformed
-        numero1 = Double.parseDouble(valor1.getText());
-        numero2 = Double.parseDouble(valor2.getText());
+        try{numero1 = Double.parseDouble(valor1.getText());
+        numero2 = Double.parseDouble(valor2.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null, "Só podem apenas números");}
         sinal = "divisao";
     }//GEN-LAST:event_divisorActionPerformed
 
     private void clearOperatorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearOperatorsActionPerformed
-        valor1.setText(null);
-        valor2.setText(null);
-        result.setText("0");        // TODO add your handling code here:
+        valor1.setText("");
+        valor2.setText("");
+        result.setText("");        // TODO add your handling code here:
     }//GEN-LAST:event_clearOperatorsActionPerformed
+
+    private void valor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valor1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_valor1ActionPerformed
+
+    private void ButtonCEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCEActionPerformed
+    
+    }//GEN-LAST:event_ButtonCEActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,6 +264,7 @@ public class calculadora20 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonCE;
     private javax.swing.JButton clearOperators;
     private javax.swing.JButton divisor;
     private javax.swing.JButton jButton1;
