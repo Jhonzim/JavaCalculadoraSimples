@@ -1,14 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+ 
 package projeto.calculadora;
 
-/**
- *
- * @author USUARIO
- */
+import javax.swing.JOptionPane;
 public class jFrameCalculadora extends javax.swing.JFrame {
 
 
@@ -357,7 +351,7 @@ public class jFrameCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_num7ActionPerformed
 
     private void divisorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisorActionPerformed
-        numero1 = Double.parseDouble(valor1.getText());
+        try{numero1 = Double.parseDouble(valor1.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null, "Só é possivel usar numeros");}
         valor1.setText("");
         sinal = "divisao";      
     }//GEN-LAST:event_divisorActionPerformed
@@ -367,42 +361,42 @@ public class jFrameCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_pontoActionPerformed
 
     private void somaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_somaActionPerformed
-        numero1 = Double.parseDouble(valor1.getText());
+        try{numero1 = Double.parseDouble(valor1.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null, "Só é possivel usar numeros");}
         valor1.setText("");
         sinal = "soma";
     }//GEN-LAST:event_somaActionPerformed
 
     private void subtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtracaoActionPerformed
-        numero1 = Double.parseDouble(valor1.getText());
+        try{numero1 = Double.parseDouble(valor1.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null, "Só é possivel usar numeros");}
         valor1.setText("");
         sinal = "subtracao";       
     }//GEN-LAST:event_subtracaoActionPerformed
 
     private void multiplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplicacaoActionPerformed
-        numero1 = Double.parseDouble(valor1.getText());
+        try{numero1 = Double.parseDouble(valor1.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null, "Só é possivel usar numeros");}
         valor1.setText("");
         sinal = "multiplicacao";
     }//GEN-LAST:event_multiplicacaoActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        numero2 = Double.parseDouble(valor1.getText());
+        try{numero2 = Double.parseDouble(valor1.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null, "Só é possivel usar numeros");}
         valor1.setText("");
         double resultado;
         if(sinal == "soma"){
            result.setText(String.valueOf(resultado = (numero1 + numero2)));
-           numero1 = Double.parseDouble(result.getText());
+           try{numero1 = Double.parseDouble(result.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null, "Só é possivel usar numeros");}
         }
         if(sinal == "subtracao"){
            result.setText(String.valueOf(resultado = (numero1 - numero2)));
-           numero1 = Double.parseDouble(result.getText());
+           try{numero1 = Double.parseDouble(result.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null, "Só é possivel usar numeros");}
         }
         if(sinal == "multiplicacao"){
            result.setText(String.valueOf(resultado = (numero1 * numero2)));
-           numero1 = Double.parseDouble(result.getText());
+           try{numero1 = Double.parseDouble(result.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null, "Só é possivel usar numeros");}
         }
         if(sinal == "divisao"){
            result.setText(String.valueOf(resultado = (numero1 / numero2)));
-           numero1 = Double.parseDouble(result.getText());
+           try{numero1 = Double.parseDouble(result.getText());}catch(NumberFormatException ex){JOptionPane.showMessageDialog(null, "Só é possivel usar numeros");}
         }
     }//GEN-LAST:event_jButton16ActionPerformed
 
